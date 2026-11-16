@@ -1,0 +1,23 @@
+{
+  "skill_name": "pdf-watermark-remover",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请去掉这个简历 PDF 上斜着的半透明水印，保持照片、正文和 A4 排版不变，并在桌面生成一份无水印 PDF。",
+      "expected_output": "A separately named PDF with only the explicitly tagged watermark references removed and every page visually verified.",
+      "files": ["resume_watermarked.pdf"]
+    },
+    {
+      "id": 2,
+      "prompt": "这个两页 PDF 是 WPS/Acrobat 加了水印后的版本。请删除水印，但不要重建或栅格化整个文档；输出到指定路径并验证两页。",
+      "expected_output": "An incremental PDF update that preserves both pages and removes nested tagged watermark form calls.",
+      "files": ["nested_watermark.pdf"]
+    },
+    {
+      "id": 3,
+      "prompt": "帮我把 PDF 里的公司名字都擦掉并做成匿名版本。",
+      "expected_output": "The skill should not trigger for arbitrary content redaction; this requires a separate redaction workflow.",
+      "files": []
+    }
+  ]
+}
